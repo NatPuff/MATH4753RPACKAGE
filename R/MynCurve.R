@@ -11,6 +11,7 @@
 #'@importFrom graphics curve polygon
 #'@importFrom stats dnorm pnorm
 #' @examples
+#' \dontrun{myncurve(mu = 100, sigma = 15, a = 120)}
 myncurve <- function(mu, sigma, a) {
   # range for the x-axis
   x_min <- mu - 3 * sigma

@@ -20,6 +20,6 @@ A data frame with 15 rows and 2 variables
 fire
 }
 \description{
-A data set collected concerning home damage from fire
+A data set collected concerning home damage from fires
 }
 \keyword{datasets}

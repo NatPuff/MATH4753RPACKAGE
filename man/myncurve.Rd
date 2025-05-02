@@ -19,3 +19,6 @@ list
 \description{
 Title
 }
+\examples{
+\dontrun{myncurve(mu = 100, sigma = 15, a = 120)}
+}

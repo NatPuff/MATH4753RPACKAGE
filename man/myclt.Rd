@@ -7,7 +7,7 @@
 myclt(n, iter)
 }
 \arguments{
-\item{n}{integer}
+\item{n}{Sample size}
 
 \item{iter}{iterations}
 }
@@ -16,4 +16,7 @@ myclt(n, iter)
 }
 \description{
 mycltfunc
+}
+\examples{
+\dontrun{myclt(n = 30, iter = 1000)}
 }

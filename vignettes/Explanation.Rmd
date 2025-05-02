@@ -1,0 +1,74 @@
+---
+title: "Natalie's R Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Natalie's R Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753Natalie2025)
+data("fire")
+```
+# Introduction
+This is my package for class MATH-4753. This is a small collection of functions built throughout the course of the semester. scatterhist creates a scatterplot with histograms, myncurve plots a normal distribution and shades the specified area, myclt simulates the central limit theorem through repeated sampling, and mybin approximates a binomial distribution.
+
+## First Function - scatterhist
+Arguments:
+x - x variable as vector
+y - y variable as vector
+xlab - x label
+ylab - y label
+
+This function creates a scatter plot of x vs y with histograms displayed on the edges. Histogram of x is on the top and for y its on the right. Here distance is our x and damage is our y.
+```{r, echo=TRUE}
+MATH4753Natalie2025::scatterhist(fire$DISTANCE, fire$DAMAGE, xlab = "distance", ylab = "damage")
+``` 
+
+
+## Second Function - myncurve
+Arguments:
+ mu - mean
+ sigma - standard deviation
+ a - the values of up to what point you want the graph shaded
+
+This function draws the density curve of a normal distribution from mu - 3(sigma) to mu + 3(sigma) and shades the area under the curve up to a. Prints cummulative pobability and returns a list.
+```{r, echo=TRUE}
+MATH4753Natalie2025::myncurve(mu = 100, sigma = 15, a = 120)
+
+```
+
+Arguments:
+n - sample size for each iteration
+iter - number of iterations
+
+This function takes n x iter values from the unifrom distribution on [0,5], the main purpose is to illustrate the central limit theorem. Returns histogram of sample sums
+## Third Function - myclt
+```{r, echo=TRUE}
+#Invisible used here to avoid clutter from printing big list
+invisible(MATH4753Natalie2025::myclt(n = 30, iter = 1000))
+
+```
+
+## Fourth Function - myBin
+Arguments:
+
+iter - number of iterations
+
+n -number of trials
+
+p - probability of success on single trial
+
+This function approximates a binomial distribution by simualting repeated trials. In this example we simulate 100 binomial experiments with 10 trials each and success probability of 0.5
+```{r, echo=TRUE}
+MATH4753Natalie2025::mybin(iter = 100, n = 10, p = 0.5)
+
+```
